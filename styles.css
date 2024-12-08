@@ -13,8 +13,26 @@ h1, h2 {
 
 header {
     background-color: #314b57;
-    padding: 20px;
     text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: initial;
+}
+
+.header-content {
+    padding: 15px;
+}
+
+.header-content h1 {
+    font-size: 22px;
+    display: table-cell;
+    padding-bottom: 10px;
+}
+
+.map img {
+    max-width: 500px;
+    height: auto;
 }
 
 header h1 {
@@ -24,7 +42,7 @@ header h1 {
 
 nav {
     display: flex;
-    justify-content: center;
+    zoom: 1.4;
 }
 
 nav a {
@@ -32,6 +50,7 @@ nav a {
     text-align: center;
     color: #fff;
     text-decoration: none;
+    font-weight: bold;
 }
 
 nav img {
@@ -39,38 +58,61 @@ nav img {
     height: 100px;
     border-radius: 50%;
     display: block;
+    margin-bottom: 5px;
+}
+
+header > a img {
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+    margin-top: 20px;
 }
 
 .service-area {
     max-width: 1200px;
     margin: 40px auto;
-    padding: 20px;
-    text-align: center;
 }
 
 .service-area h2 {
     color: #ab3c3c;
-    font-size: 2em;
+    font-size: 45px;
     margin-bottom: 20px;
+    text-align: left;
 }
 
-.service-area img {
-    width: 100%;
-    max-width: 600px;
+.service-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.service-content img {
+    max-width: 50%;
     height: auto;
-    margin-bottom: 20px;
+}
+
+.service-content div {
+    flex: 1;
 }
 
 .service-area p {
     color: #333;
     margin: 20px 0;
+    text-align: left;
 }
 
 .service-area a {
     color: #ab3c3c;
     text-decoration: none;
     display: block;
-    margin: 10px 0;
+    margin: 5px 0;
+    text-align: left;
+}
+
+a.heating-text {
+    display: contents;
+    color: #314b57;
+    font-weight: 600;
 }
 
 .articles {
@@ -81,14 +123,14 @@ nav img {
 
 .articles h2 {
     color: #ab3c3c;
-    font-size: 2em;
+    font-size: 34px;
     margin-bottom: 20px;
-    text-align: center;
+    text-align: left;
 }
 
-.articles {
+.article-list {
     display: flex;
-    justify-content: space-between;
+    justify-content: start;
     flex-wrap: wrap;
 }
 
@@ -96,7 +138,6 @@ nav img {
     flex: 1;
     margin: 10px;
     min-width: 250px;
-    max-width: 300px;
 }
 
 .articles article img {
@@ -108,6 +149,7 @@ nav img {
 
 .articles article p {
     color: #333;
+    text-align: left;
 }
 
 .articles article a {
@@ -116,15 +158,40 @@ nav img {
     font-weight: bold;
     display: block;
     margin-top: 10px;
+    text-align: left;
+    text-decoration: underline;
 }
 
 @media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        text-align: start;
+    }
+
+    .map img {
+        max-width: 100%;
+    }
+
     nav {
         flex-direction: column;
     }
-    
-    .articles {
+
+    .service-content {
+        flex-direction: column;
+    }
+
+    .article-list {
         flex-direction: column;
         align-items: center;
+    }
+
+    .service-area {
+        padding: 20px;
+    }
+}
+
+@media (max-width: 1024px) {
+    nav {
+        zoom: 1;
     }
 }
